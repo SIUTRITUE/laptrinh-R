@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  shiny-app:
+    build: .
+    container_name: shiny_app
+    ports:
+      - "3838:3838"
+    volumes:
+      - .:/srv/shiny-server/app
+    restart: unless-stopped
